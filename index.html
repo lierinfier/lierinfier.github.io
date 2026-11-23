@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gv片 - 官方视频品牌门户 | 高清原创内容社区</title>
+<meta name="description" content="gv片官方网站，专注于高清原创视频内容的品牌平台，汇聚专业创作者与企业内容生态，持续运营值得信赖的视频社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1f2a'/%3E%3Cpath d='M24 20l22 12-22 12z' fill='%23ff5a5f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --gv-bg:#f5f6f8;
+  --gv-ink:#14171f;
+  --gv-ink-soft:#4a5060;
+  --gv-line:#e0e3ea;
+  --gv-card:#ffffff;
+  --gv-accent:#ff5a5f;
+  --gv-accent-deep:#d63a40;
+  --gv-blue:#2b4a8b;
+  --gv-shadow:0 10px 30px rgba(20,23,31,.08);
+  --gv-radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--gv-bg);
+  color:var(--gv-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0;line-height:1.3;}
+p{margin:0 0 1em;}
+button{font-family:inherit;cursor:pointer;border:none;}
+.gvx-shell{width:min(1160px,92%);margin:0 auto;}
+.gvx-anchor{scroll-margin-top:130px;}
+.gvx-sticky{position:sticky;top:0;z-index:60;}
+
+/* 公告条 */
+.gvx-notice{
+  background:linear-gradient(90deg,#14171f,#2b4a8b 70%,#14171f);
+  color:#f5f6f8;
+  font-size:13px;
+  letter-spacing:.02em;
+}
+.gvx-notice .gvx-shell{
+  display:flex;align-items:center;gap:14px;
+  padding:8px 0;flex-wrap:wrap;
+}
+.gvx-notice-tag{
+  background:var(--gv-accent);
+  color:#fff;font-size:11px;font-weight:700;
+  padding:2px 9px;border-radius:20px;letter-spacing:.08em;
+}
+.gvx-notice-list{display:flex;gap:22px;flex-wrap:wrap;overflow:hidden;}
+.gvx-notice-list span{white-space:nowrap;opacity:.92;}
+.gvx-notice-list span b{color:#ffd0d1;font-weight:600;}
+
+/* 页头 */
+.gvx-header{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gv-line);
+}
+.gvx-header .gvx-shell{
+  display:flex;align-items:center;gap:26px;
+  padding:14px 0;
+}
+.gvx-brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.gvx-brand-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(145deg,#1b1f2a,#2b4a8b);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.gvx-brand-mark svg{width:22px;height:22px;}
+.gvx-brand-text strong{font-size:20px;letter-spacing:.03em;display:block;}
+.gvx-brand-text small{font-size:11px;color:var(--gv-ink-soft);letter-spacing:.18em;}
+.gvx-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap;}
+.gvx-nav a{
+  font-size:14px;padding:7px 12px;border-radius:8px;
+  color:var(--gv-ink-soft);transition:.18s;
+}
+.gvx-nav a:hover{background:#eef0f5;color:var(--gv-ink);}
+.gvx-header-tools{margin-left:auto;display:flex;align-items:center;gap:10px;}
+.gvx-search{position:relative;display:flex;align-items:center;}
+.gvx-search input{
+  width:200px;padding:9px 34px 9px 34px;border-radius:22px;
+  border:1px solid var(--gv-line);background:#f7f8fb;
+  font-size:13px;outline:none;transition:.2s;
+}
+.gvx-search input:focus{width:240px;border-color:var(--gv-accent);background:#fff;}
+.gvx-search .gvx-search-ico{
+  position:absolute;left:12px;width:15px;height:15px;opacity:.5;pointer-events:none;
+}
+.gvx-search-btn{
+  position:absolute;right:4px;background:var(--gv-accent);color:#fff;
+  border-radius:50%;width:27px;height:27px;display:grid;place-items:center;font-size:13px;
+}
+.gvx-menu-toggle{
+  display:none;background:#eef0f5;border-radius:9px;
+  width:40px;height:40px;font-size:19px;line-height:1;
+}
+.gvx-search-feedback{
+  position:absolute;top:46px;left:0;right:0;z-index:50;
+  background:#fff;border:1px solid var(--gv-line);border-radius:10px;
+  box-shadow:var(--gv-shadow);padding:8px 6px;font-size:13px;display:none;
+}
+.gvx-search-feedback.show{display:block;}
+.gvx-search-feedback a{display:block;padding:7px 10px;border-radius:7px;}
+.gvx-search-feedback a:hover{background:#f2f3f7;}
+.gvx-search-feedback .gvx-sf-empty{padding:8px 10px;color:var(--gv-ink-soft);}
+
+/* 首屏 */
+.gvx-hero{padding:44px 0 20px;}
+.gvx-hero-grid{
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);
+  gap:48px;align-items:center;
+}
+.gvx-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.16em;color:var(--gv-accent-deep);
+  font-weight:700;text-transform:uppercase;margin-bottom:16px;
+}
+.gvx-hero-eyebrow::before{content:"";width:26px;height:2px;background:var(--gv-accent);}
+.gvx-hero h1{
+  font-size:clamp(38px,5.4vw,62px);
+  letter-spacing:-.02em;font-weight:800;margin-bottom:18px;
+}
+.gvx-hero h1 span{color:var(--gv-accent);}
+.gvx-hero-lead{
+  font-size:17px;color:var(--gv-ink-soft);max-width:46ch;margin-bottom:22px;
+}
+.gvx-hero-desc{
+  font-size:14.5px;color:var(--gv-ink-soft);
+  border-left:3px solid var(--gv-line);padding-left:16px;margin-bottom:26px;
+}
+.gvx-hero-desc strong{color:var(--gv-ink);}
+.gvx-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.gvx-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:10px;font-size:14.5px;font-weight:600;
+  transition:.18s;
+}
+.gvx-btn-primary{background:var(--gv-accent);color:#fff;box-shadow:0 8px 20px rgba(255,90,95,.28);}
+.gvx-btn-primary:hover{background:var(--gv-accent-deep);transform:translateY(-2px);}
+.gvx-btn-ghost{background:#fff;border:1px solid var(--gv-line);color:var(--gv-ink);}
+.gvx-btn-ghost:hover{border-color:var(--gv-ink);transform:translateY(-2px);}
+.gvx-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;border-top:1px solid var(--gv-line);padding-top:22px;
+}
+.gvx-stat b{font-size:26px;font-weight:800;display:block;letter-spacing:-.01em;}
+.gvx-stat b i{font-style:normal;color:var(--gv-accent);font-size:18px;}
+.gvx-stat span{font-size:12.5px;color:var(--gv-ink-soft);}
+.gvx-hero-visual{position:relative;}
+.gvx-hero-frame{
+  border-radius:20px;overflow:hidden;box-shadow:var(--gv-shadow);
+  border:1px solid var(--gv-line);background:#0f1219;
+  aspect-ratio:5/4;
+}
+.gvx-hero-frame svg{width:100%;height:100%;display:block;}
+.gvx-hero-badge{
+  position:absolute;bottom:18px;left:18px;
+  background:rgba(20,23,31,.82);backdrop-filter:blur(8px);
+  color:#fff;font-size:12.5px;padding:9px 15px;border-radius:10px;
+  display:flex;align-items:center;gap:9px;
+}
+.gvx-hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.22);}
+
+/* 通用 section 头 */
+.gvx-section{padding:56px 0;}
+.gvx-section-head{margin-bottom:32px;max-width:760px;}
+.gvx-section-head .gvx-kicker{
+  font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--gv-accent-deep);
+  text-transform:uppercase;display:block;margin-bottom:10px;
+}
+.gvx-section-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.01em;margin-bottom:10px;}
+.gvx-section-head p{color:var(--gv-ink-soft);font-size:15px;}
+
+/* 焦点内容 */
+.gvx-focus-grid{
+  display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:28px;
+}
+.gvx-focus-main{
+  background:var(--gv-card);border-radius:var(--gv-radius);overflow:hidden;
+  border:1px solid var(--gv-line);box-shadow:var(--gv-shadow);
+  transition:.22s;
+}
+.gvx-focus-main:hover{transform:translateY(-4px);}
+.gvx-focus-cover{aspect-ratio:16/9;overflow:hidden;background:#0f1219;}
+.gvx-focus-cover svg{width:100%;height:100%;}
+.gvx-focus-body{padding:24px 26px 26px;}
+.gvx-focus-body h3{font-size:22px;margin-bottom:10px;}
+.gvx-focus-body p{color:var(--gv-ink-soft);font-size:14.5px;}
+.gvx-meta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--gv-ink-soft);}
+.gvx-tag{
+  background:#eef0f5;color:var(--gv-ink-soft);font-size:12px;
+  padding:3px 10px;border-radius:20px;
+}
+.gvx-tag-accent{background:#ffe8e9;color:var(--gv-accent-deep);font-weight:600;}
+.gvx-focus-side{display:flex;flex-direction:column;gap:16px;}
+.gvx-mini-card{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:12px;
+  padding:12px;transition:.2s;align-items:center;
+}
+.gvx-mini-card:hover{border-color:var(--gv-accent);transform:translateX(3px);}
+.gvx-mini-thumb{aspect-ratio:1/1;border-radius:9px;overflow:hidden;background:#0f1219;}
+.gvx-mini-thumb svg{width:100%;height:100%;}
+.gvx-mini-card h4{font-size:14.5px;line-height:1.45;margin-bottom:5px;}
+.gvx-mini-card p{font-size:12.5px;color:var(--gv-ink-soft);margin:0;}
+
+/* 视频列表 */
+.gvx-video-list{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--gv-line);}
+.gvx-video-row{
+  display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:18px;
+  padding:20px 6px;border-bottom:1px solid var(--gv-line);
+  align-items:start;transition:.18s;
+}
+.gvx-video-row:hover{background:#f0f2f7;}
+.gvx-video-index{font-size:19px;font-weight:800;color:#c3c8d4;line-height:1.2;}
+.gvx-video-row h4{font-size:16.5px;margin-bottom:6px;}
+.gvx-video-row p{font-size:13.5px;color:var(--gv-ink-soft);margin-bottom:9px;}
+.gvx-video-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.gvx-video-action{
+  background:#f2f3f7;border-radius:20px;padding:4px 12px;
+  font-size:12.5px;color:var(--gv-ink-soft);transition:.16s;display:inline-flex;align-items:center;gap:5px;
+}
+.gvx-video-action:hover{background:#e7e9f0;color:var(--gv-ink);}
+.gvx-video-action.gvx-liked{background:#ffe8e9;color:var(--gv-accent-deep);}
+.gvx-video-action.gvx-saved{background:#e6edfb;color:var(--gv-blue);}
+.gvx-video-side-data{font-size:12.5px;color:var(--gv-ink-soft);text-align:right;white-space:nowrap;}
+.gvx-video-side-data b{display:block;color:var(--gv-ink);font-size:14px;}
+
+/* 关键词解析 */
+.gvx-parse-wrap{
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:18px;
+  padding:clamp(26px,4vw,50px);box-shadow:var(--gv-shadow);
+}
+.gvx-parse-wrap h2{margin-bottom:22px;font-size:clamp(24px,3vw,32px);}
+.gvx-parse-wrap h3{font-size:19px;margin:28px 0 10px;display:flex;gap:11px;align-items:baseline;}
+.gvx-parse-wrap h3::before{
+  content:"";width:8px;height:8px;border-radius:2px;background:var(--gv-accent);
+  flex-shrink:0;transform:translateY(-2px);
+}
+.gvx-parse-wrap p{color:var(--gv-ink-soft);font-size:15px;}
+.gvx-parse-wrap strong{color:var(--gv-ink);}
+
+/* 专题 */
+.gvx-special-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.gvx-special-card{
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:var(--gv-radius);
+  padding:22px;display:flex;flex-direction:column;gap:12px;transition:.2s;
+}
+.gvx-special-card:hover{transform:translateY(-4px);box-shadow:var(--gv-shadow);border-color:#cfd6e6;}
+.gvx-special-status{
+  align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.05em;
+  padding:3px 10px;border-radius:20px;background:#e6edfb;color:var(--gv-blue);
+}
+.gvx-special-status.gvx-live{background:#e7f8ee;color:#1a8a4c;}
+.gvx-special-card h3{font-size:18px;}
+.gvx-special-card > p{font-size:13.5px;color:var(--gv-ink-soft);margin:0;}
+.gvx-special-items{list-style:none;padding:0;margin:4px 0 0;display:flex;flex-direction:column;gap:9px;}
+.gvx-special-items li{
+  font-size:13px;color:var(--gv-ink-soft);display:flex;gap:9px;align-items:baseline;
+}
+.gvx-special-items li::before{content:"›";color:var(--gv-accent);font-weight:700;}
+
+/* 作者 */
+.gvx-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.gvx-author-card{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:var(--gv-radius);
+  padding:20px;transition:.2s;
+}
+.gvx-author-card:hover{transform:translateY(-3px);box-shadow:var(--gv-shadow);}
+.gvx-avatar{
+  width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;
+}
+.gvx-avatar svg{width:100%;height:100%;}
+.gvx-author-card h3{font-size:17px;margin-bottom:3px;}
+.gvx-author-role{font-size:12.5px;color:var(--gv-accent-deep);font-weight:600;margin-bottom:7px;}
+.gvx-author-card p{font-size:13px;color:var(--gv-ink-soft);margin-bottom:9px;}
+.gvx-author-stats{display:flex;gap:14px;font-size:12px;color:var(--gv-ink-soft);}
+.gvx-author-stats b{color:var(--gv-ink);font-size:13px;}
+
+/* 评价 */
+.gvx-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.gvx-comment{
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:12px;
+  padding:18px 20px;position:relative;
+}
+.gvx-comment::before{
+  content:"“";position:absolute;top:6px;right:16px;font-size:44px;
+  color:#eceef4;font-family:Georgia,serif;line-height:1;
+}
+.gvx-comment p{font-size:13.8px;color:var(--gv-ink-soft);margin-bottom:12px;position:relative;z-index:1;}
+.gvx-comment-by{display:flex;align-items:center;gap:9px;font-size:12.5px;}
+.gvx-comment-dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:11.5px;font-weight:700;flex-shrink:0;}
+.gvx-comment-by b{color:var(--gv-ink);}
+.gvx-comment-stars{margin-left:auto;color:var(--gv-accent);font-size:12px;letter-spacing:1px;}
+
+/* 动态 / 合作 / FAQ */
+.gvx-triple{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;}
+.gvx-panel{background:var(--gv-card);border:1px solid var(--gv-line);border-radius:var(--gv-radius);padding:26px 28px;}
+.gvx-panel h2{font-size:22px;margin-bottom:18px;}
+.gvx-news{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;}
+.gvx-news li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline;}
+.gvx-news time{font-size:12px;color:var(--gv-ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.gvx-news h4{font-size:14.5px;margin-bottom:2px;}
+.gvx-news p{font-size:12.5px;color:var(--gv-ink-soft);margin:0;}
+.gvx-partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.gvx-partner{
+  font-size:13px;padding:8px 16px;border-radius:8px;background:#f2f3f7;
+  color:var(--gv-ink-soft);border:1px solid transparent;transition:.18s;
+}
+.gvx-partner:hover{border-color:var(--gv-accent);color:var(--gv-accent-deep);}
+.gvx-faq{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
+.gvx-faq details{
+  background:var(--gv-card);border:1px solid var(--gv-line);border-radius:10px;
+  padding:14px 18px;transition:.18s;
+}
+.gvx-faq details[open]{border-color:#cfd6e6;box-shadow:var(--gv-shadow);}
+.gvx-faq summary{
+  font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.gvx-faq summary::-webkit-details-marker{display:none;}
+.gvx-faq summary::after{content:"+";color:var(--gv-accent);font-size:19px;font-weight:400;line-height:1;}
+.gvx-faq details[open] summary::after{content:"–";}
+.gvx-faq details p{margin:12px 0 0;font-size:13.5px;color:var(--gv-ink-soft);}
+
+/* 页脚 */
+.gvx-footer{background:#14171f;color:#c8ccd6;padding:52px 0 30px;margin-top:40px;}
+.gvx-footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:32px;}
+.gvx-footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.03em;}
+.gvx-footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;font-size:13px;}
+.gvx-footer ul a:hover{color:#fff;}
+.gvx-footer-brand p{font-size:13px;max-width:36ch;color:#9aa1b0;}
+.gvx-footer-bottom{
+  border-top:1px solid #262a36;margin-top:38px;padding-top:20px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:#7d8494;
+}
+.gvx-footer-badge{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#9aa1b0;
+  margin-top:14px;
+}
+.gvx-footer-badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;}
+
+/* 回到顶部 */
+.gvx-top-btn{
+  position:fixed;right:22px;bottom:26px;z-index:70;
+  width:46px;height:46px;border-radius:50%;background:var(--gv-ink);color:#fff;
+  display:grid;place-items:center;font-size:17px;box-shadow:var(--gv-shadow);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.25s;
+}
+.gvx-top-btn.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* Toast 与弹窗 */
+.gvx-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#14171f;color:#fff;font-size:13.5px;padding:11px 22px;border-radius:24px;
+  z-index:120;opacity:0;visibility:hidden;transition:.25s;box-shadow:var(--gv-shadow);
+}
+.gvx-toast.show{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.gvx-modal{
+  position:fixed;inset:0;z-index:110;display:none;place-items:center;padding:20px;
+  background:rgba(15,18,25,.55);backdrop-filter:blur(3px);
+}
+.gvx-modal.show{display:grid;}
+.gvx-modal-box{
+  background:#fff;border-radius:16px;max-width:480px;width:100%;
+  padding:28px 30px;box-shadow:0 24px 60px rgba(0,0,0,.28);
+  animation:gvxPop .22s ease;
+}
+@keyframes gvxPop{from{transform:scale(.96);opacity:0;}to{transform:scale(1);opacity:1;}}
+.gvx-modal-box h3{font-size:20px;margin-bottom:8px;}
+.gvx-modal-box p{font-size:14px;color:var(--gv-ink-soft);}
+.gvx-modal-close{
+  float:right;background:#f2f3f7;border-radius:50%;width:32px;height:32px;
+  font-size:16px;color:var(--gv-ink-soft);line-height:1;
+}
+.gvx-modal-form{display:flex;flex-direction:column;gap:11px;margin-top:16px;}
+.gvx-modal-form input,.gvx-modal-form textarea{
+  width:100%;padding:11px 14px;border:1px solid var(--gv-line);border-radius:9px;
+  font-family:inherit;font-size:13.5px;outline:none;resize:vertical;
+}
+.gvx-modal-form input:focus,.gvx-modal-form textarea:focus{border-color:var(--gv-accent);}
+.gvx-share-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.gvx-share-row button{
+  flex:1;min-width:92px;padding:11px 8px;border-radius:9px;background:#f2f3f7;
+  font-size:13px;color:var(--gv-ink);transition:.16s;
+}
+.gvx-share-row button:hover{background:#e7e9f0;}
+
+@media (max-width:980px){
+  .gvx-hero-grid{grid-template-columns:1fr;gap:32px;}
+  .gvx-focus-grid{grid-template-columns:1fr;}
+  .gvx-special-grid{grid-template-columns:1fr 1fr;}
+  .gvx-triple{grid-template-columns:1fr;}
+  .gvx-footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:760px){
+  .gvx-nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--gv-line);
+    flex-direction:column;padding:10px 5%;gap:2px;box-shadow:var(--gv-shadow);
+  }
+  .gvx-nav.open{display:flex;}
+  .gvx-header .gvx-shell{position:relative;}
+  .gvx-menu-toggle{display:grid;place-items:center;}
+  .gvx-search input{width:150px;}
+  .gvx-search input:focus{width:180px;}
+  .gvx-authors{grid-template-columns:1fr;}
+  .gvx-comments{grid-template-columns:1fr;}
+  .gvx-special-grid{grid-template-columns:1fr;}
+  .gvx-video-row{grid-template-columns:28px minmax(0,1fr);}
+  .gvx-video-side-data{grid-column:2;text-align:left;display:flex;gap:14px;align-items:baseline;}
+  .gvx-video-side-data b{display:inline;}
+  .gvx-footer-grid{grid-template-columns:1fr;}
+  .gvx-stats{gap:8px;}
+  .gvx-stat b{font-size:21px;}
+}
+@media (max-width:520px){
+  .gvx-hero-actions .gvx-btn{flex:1;justify-content:center;}
+  .gvx-notice-list{gap:14px;font-size:12px;}
+  .gvx-search input{width:120px;}
+  .gvx-search input:focus{width:140px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="gvx-sticky">
+  <div class="gvx-notice">
+    <div class="gvx-shell">
+      <span class="gvx-notice-tag">官方发布</span>
+      <div class="gvx-notice-list">
+        <span><b>新增</b>「真实力量」纪录片企划 12 月上线，首批 6 集开放预约</span>
+        <span><b>更新</b>创作者激励计划 2.0 报名通道已开启</span>
+        <span><b>上线</b>高清 4K 播放与下载功能全量开放</span>
+      </div>
+    </div>
+  </div>
+  <header class="gvx-header">
+    <div class="gvx-shell">
+      <a class="gvx-brand" href="#gvx-home">
+        <span class="gvx-brand-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#ff5a5f"/></svg>
+        </span>
+        <span class="gvx-brand-text">
+          <strong>gv片</strong>
+          <small>OFFICIAL VIDEO</small>
+        </span>
+      </a>
+      <nav class="gvx-nav" id="gvxNav">
+        <a href="#gvx-home">首页</a>
+        <a href="#gvx-focus">精品内容</a>
+        <a href="#gvx-parse">品牌解析</a>
+        <a href="#gvx-special">专题企划</a>
+        <a href="#gvx-authors">创作者</a>
+        <a href="#gvx-talk">用户口碑</a>
+        <a href="#gvx-help">帮助</a>
+      </nav>
+      <div class="gvx-header-tools">
+        <div class="gvx-search">
+          <svg class="gvx-search-ico" viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="gvxSearchInput" placeholder="搜索视频、专题、创作者" aria-label="站内搜索">
+          <button class="gvx-search-btn" id="gvxSearchBtn" aria-label="搜索">→</button>
+          <div class="gvx-search-feedback" id="gvxSearchFeedback"></div>
+        </div>
+        <button class="gvx-menu-toggle" id="gvxMenuToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="gvx-hero gvx-anchor" id="gvx-home">
+    <div class="gvx-shell gvx-hero-grid">
+      <div class="gvx-hero-copy">
+        <span class="gvx-hero-eyebrow">gv片 · 官方网站</span>
+        <h1><span>gv片</span> 视频品牌门户</h1>
+        <p class="gvx-hero-lead">以高清原创影像连接创作者与观众，构建持续运营的内容生态。</p>
+        <p class="gvx-hero-desc">作为专注于视频内容生产的<strong>品牌平台</strong>，gv片官方网站长期深耕真实记录与品质表达，为创作者提供稳定的发布与成长空间，为企业与用户搭建值得信赖的沟通桥梁。</p>
+        <div class="gvx-hero-actions">
+          <a class="gvx-btn gvx-btn-primary" href="#gvx-focus">观看精品内容 →</a>
+          <a class="gvx-btn gvx-btn-ghost" href="#gvx-authors">认识创作者</a>
+          <button class="gvx-btn gvx-btn-ghost" data-gvx-modal="submit">投稿入口</button>
+        </div>
+        <div class="gvx-stats">
+          <div class="gvx-stat"><b>1,860<i>万+</i></b><span>累计播放量</span></div>
+          <div class="gvx-stat"><b>2,400<i>+</i></b><span>签约创作者</span></div>
+          <div class="gvx-stat"><b>98.2<i>%</i></b><span>用户口碑好评</span></div>
+        </div>
+      </div>
+      <div class="gvx-hero-visual">
+        <div class="gvx-hero-frame">
+          <svg viewBox="0 0 640 512" role="img" aria-label="gv片官方网站首屏主视觉：夜色城市中亮起的影像放映屏与流动光带">
+            <defs>
+              <linearGradient id="gvxSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1b1f2a"/><stop offset="1" stop-color="#2b3f6e"/>
+              </linearGradient>
+              <linearGradient id="gvxScreen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff5a5f"/><stop offset="1" stop-color="#ffb199"/>
+              </linearGradient>
+              <linearGradient id="gvxBand" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#4ade80" stop-opacity="0"/><stop offset="1" stop-color="#4ade80"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="512" fill="url(#gvxSky)"/>
+            <g opacity=".35" fill="#8fa6d8">
+              <rect x="40" y="250" width="70" height="200" rx="4"/>
+              <rect x="128" y="200" width="56" height="250" rx="4"/>
+              <rect x="470" y="230" width="64" height="220" rx="4"/>
+              <rect x="552" y="180" width="48" height="270" rx="4"/>
+            </g>
+            <g fill="#13203c" opacity=".8">
+              <rect x="196" y="170" width="30" height="280" rx="3"/>
+              <rect x="410" y="150" width="34" height="300" rx="3"/>
+            </g>
+            <rect x="150" y="128" width="340" height="212" rx="14" fill="#0b0e15" stroke="#38415a" stroke-width="3"/>
+            <rect x="168" y="146" width="304" height="150" fill="url(#gvxScreen)" opacity=".92"/>
+            <path d="M300 196l46 25-46 25z" fill="#14171f"/>
+            <rect x="168" y="306" width="304" height="10" rx="5" fill="#38415a"/>
+            <g stroke="url(#gvxBand)" stroke-width="4" fill="none" stroke-linecap="round">
+              <path d="M60 430c80-40 140 30 220 0s150-60 300-10"/>
+              <path d="M40 462c90-30 160 24 250-4s160-48 310-6" opacity=".6"/>
+            </g>
+            <g fill="#ff5a5f">
+              <circle cx="96" cy="96" r="7"/>
+              <circle cx="540" cy="82" r="5"/>
+            </g>
+            <g fill="#4ade80">
+              <circle cx="500" cy="112" r="4"/>
+              <circle cx="140" cy="60" r="3"/>
+            </g>
+          </svg>
+        </div>
+        <div class="gvx-hero-badge"><span class="dot"></span>高清 4K · 原创正版内容持续更新中</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="gvx-section gvx-anchor" id="gvx-focus">
+    <div class="gvx-shell">
+      <div class="gvx-section-head">
+        <span class="gvx-kicker">Focus · 精品内容</span>
+        <h2>gv片本周焦点：值得反复观看的高清原创</h2>
+        <p>每一个作品都经过内容团队与创作者共同打磨，呈现 gv片 对真实、品质与创新的坚持。</p>
+      </div>
+      <div class="gvx-focus-grid">
+        <article class="gvx-focus-main">
+          <div class="gvx-focus-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="焦点视频封面：清晨海岸拍摄现场，摄影师与三脚架在海浪前的剪影">
+              <defs>
+                <linearGradient id="gvxSea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#9fd3e8"/><stop offset="1" stop-color="#1e5f8a"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#gvxSea)"/>
+              <circle cx="500" cy="88" r="46" fill="#ffe6a7" opacity=".9"/>
+              <path d="M0 250c90-22 150 18 250 2s200 26 390-6v114H0z" fill="#123f5e"/>
+              <path d="M0 288c110-16 180 14 280 0s210 18 360-4v76H0z" fill="#0b2b42"/>
+              <g stroke="#0b2b42" stroke-width="5" fill="none">
+                <path d="M330 300l-6-88 10 0-4 88z"/>
+                <path d="M300 214h64" stroke-width="4"/>
+                <path d="M332 212l22-22" stroke-width="4"/>
+              </g>
+              <circle cx="356" cy="188" r="7" fill="#0b2b42"/>
+              <g stroke="#0b2b42" stroke-width="6" fill="none" stroke-linecap="round">
+                <path d="M120 296l4-70"/>
+                <circle cx="124" cy="218" r="10" fill="#0b2b42" stroke="none"/>
+                <path d="M124 240l-16 34M124 240l18 30"/>
+              </g>
+              <g fill="#ffffff" opacity=".55">
+                <circle cx="440" cy="140" r="3"/><circle cx="466" cy="118" r="2"/>
+                <circle cx="410" cy="112" r="2.4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="gvx-focus-body">
+            <div class="gvx-meta-row" style="margin-bottom:12px;">
+              <span class="gvx-tag gvx-tag-accent">重点推荐</span>
+              <span class="gvx-tag">日常记录</span>
+              <span class="gvx-tag">创作幕后</span>
+            </div>
+            <h3>《在天亮前开机》—— 一支海岸纪录片的拍摄手记</h3>
+            <p>凌晨四点的潮汐、反复重来的长镜头、被海风吹乱的对白。gv片 影像团队用一整夜记录创作者如何在有限条件下拍出真实力量，也把幕后那些未被剪进正片的细节完整呈现。</p>
+            <div class="gvx-meta-row">
+              <span>作者：岑野</span><span>播放 128.6 万</span><span>点赞 9.4 万</span>
+              <div class="gvx-video-actions" style="margin-left:auto;">
+                <button class="gvx-video-action" data-gvx-like>♥ <b>9.4万</b></button>
+                <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+                <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="gvx-focus-side">
+          <a class="gvx-mini-card" href="#gvx-focus">
+            <div class="gvx-mini-thumb">
+              <svg viewBox="0 0 96 96" role="img" aria-label="视频缩略图：老街菜市场摊位上整齐码放的红色食材">
+                <rect width="96" height="96" fill="#f7e4cd"/>
+                <g fill="#d94f3d"><circle cx="30" cy="40" r="13"/><circle cx="58" cy="36" r="10"/><circle cx="46" cy="62" r="15"/></g>
+                <rect x="10" y="76" width="76" height="8" rx="3" fill="#8a5a35"/>
+              </svg>
+            </div>
+            <div><h4>清晨六点的市场：一座城市的味道从哪来</h4><p>城市探索 · 王砚 · 播放 46.2 万</p></div>
+          </a>
+          <a class="gvx-mini-card" href="#gvx-focus">
+            <div class="gvx-mini-thumb">
+              <svg viewBox="0 0 96 96" role="img" aria-label="视频缩略图：剪辑软件时间轴与波形示意图">
+                <rect width="96" height="96" fill="#1b2434"/>
+                <g fill="#2b4a8b"><rect x="12" y="20" width="46" height="9" rx="3"/><rect x="12" y="38" width="66" height="9" rx="3"/><rect x="26" y="56" width="54" height="9" rx="3"/></g>
+                <path d="M40 20v50" stroke="#ff5a5f" stroke-width="2"/>
+                <path d="M46 74h34" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div><h4>剪辑的第一性原理：把节奏还给观众</h4><p>教程干货 · 陆知夏 · 播放 33.9 万</p></div>
+          </a>
+          <a class="gvx-mini-card" href="#gvx-focus">
+            <div class="gvx-mini-thumb">
+              <svg viewBox="0 0 96 96" role="img" aria-label="视频缩略图：手作陶器在拉坯机上的俯视构图">
+                <rect width="96" height="96" fill="#e8dccb"/>
+                <circle cx="48" cy="50" r="26" fill="#b8836a"/>
+                <circle cx="48" cy="50" r="16" fill="#8d5f4c"/>
+                <circle cx="48" cy="50" r="7" fill="#e8dccb"/>
+                <rect x="14" y="76" width="68" height="6" rx="3" fill="#a89c8a"/>
+              </svg>
+            </div>
+            <div><h4>一只杯子烧了三次：手作人的耐心刻度</h4><p>在地文化 · 苏拾 · 播放 27.5 万</p></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="gvx-video-list" style="margin-top:34px;">
+        <article class="gvx-video-row">
+          <span class="gvx-video-index">01</span>
+          <div>
+            <h4>一镜到底的十分钟：乡村小学的升旗仪式</h4>
+            <p>把摄像机架在操场角落，不剪辑、不配乐，只留下清晨的风声与孩子们的口号。gv片 相信真实的影像本身就有力量。</p>
+            <div class="gvx-meta-row" style="margin-bottom:9px;"><span class="gvx-tag">真实故事</span><span class="gvx-tag">教育</span></div>
+            <div class="gvx-video-actions">
+              <button class="gvx-video-action" data-gvx-like>♥ <b>4.8万</b></button>
+              <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+              <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+            </div>
+          </div>
+          <div class="gvx-video-side-data"><b>82.1 万</b>播放<span>作者 周牧</span></div>
+        </article>
+        <article class="gvx-video-row">
+          <span class="gvx-video-index">02</span>
+          <div>
+            <h4>从脚本到成片：8 分钟讲透叙事结构</h4>
+            <p>开场三十秒该做什么、冲突如何递进、结尾如何收束。创作者用三段自己的旧作拆解一个可复用的叙事框架。</p>
+            <div class="gvx-meta-row" style="margin-bottom:9px;"><span class="gvx-tag">教程干货</span><span class="gvx-tag">行业观察</span></div>
+            <div class="gvx-video-actions">
+              <button class="gvx-video-action" data-gvx-like>♥ <b>3.2万</b></button>
+              <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+              <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+            </div>
+          </div>
+          <div class="gvx-video-side-data"><b>61.4 万</b>播放<span>作者 陆知夏</span></div>
+        </article>
+        <article class="gvx-video-row">
+          <span class="gvx-video-index">03</span>
+          <div>
+            <h4>三十天只拍一棵树：慢下来的观察练习</h4>
+            <p>同一机位、同一棵树、三十段素材。创作者把季节变化压进四分钟，观众在评论区写下自己的季节记忆。</p>
+            <div class="gvx-meta-row" style="margin-bottom:9px;"><span class="gvx-tag">治愈影像</span><span class="gvx-tag">生活方式</span></div>
+            <div class="gvx-video-actions">
+              <button class="gvx-video-action" data-gvx-like>♥ <b>5.7万</b></button>
+              <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+              <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+            </div>
+          </div>
+          <div class="gvx-video-side-data"><b>97.3 万</b>播放<span>作者 南屿</span></div>
+        </article>
+        <article class="gvx-video-row">
+          <span class="gvx-video-index">04</span>
+          <div>
+            <h4>把家搬进 18 平米：收纳与光线的取舍</h4>
+            <p>从动线规划到灯光层级的完整改造记录，包含预算表与失败案例复盘，适合准备改造小空间的人参考。</p>
+            <div class="gvx-meta-row" style="margin-bottom:9px;"><span class="gvx-tag">家居收纳</span><span class="gvx-tag">实用技巧</span></div>
+            <div class="gvx-video-actions">
+              <button class="gvx-video-action" data-gvx-like>♥ <b>2.9万</b></button>
+              <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+              <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+            </div>
+          </div>
+          <div class="gvx-video-side-data"><b>44.6 万</b>播放<span>作者 温其</span></div>
+        </article>
+        <article class="gvx-video-row">
+          <span class="gvx-video-index">05</span>
+          <div>
+            <h4>器材之外：用手机完成一支品牌短片</h4>
+            <p>自然光、稳定器与两枚镜头，从分镜表到调色参数全部公开。gv片 编辑部实测这套流程的可复制性。</p>
+            <div class="gvx-meta-row" style="margin-bottom:9px;"><span class="gvx-tag">深度测评</span><span class="gvx-tag">创作幕后</span></div>
+            <div class="gvx-video-actions">
+              <button class="gvx-video-action" data-gvx-like>♥ <b>2.1万</b></button>
+              <button class="gvx-video-action" data-gvx-save>☆ 收藏</button>
+              <button class="gvx-video-action" data-gvx-modal="share">分享</button>
+            </div>
+          </div>
+          <div class="gvx-video-side-data"><b>38.2 万</b>播放<span>作者 岑野</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌与关键词解析 -->
+  <section class="gvx-section gvx-anchor" id="gvx-parse">
+    <div class="gvx-shell">
+      <div class="gvx-parse-wrap">
+        <span class="gvx-kicker" style="display:block;font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--gv-accent-deep);margin-bottom:10px;">BRAND STORY · 品牌解析</span>
+        <h2>读懂 gv片：一个视频品牌如何把内容生态做深</h2>
+        <p><strong>gv片</strong>不是一个停留在聚合层面的视频社区，而是一个从选题、拍摄、审核到发行都建立标准流程的原创内容平台。作为官方网站对外呈现的品牌，我们更愿意把 gv片 定义为“影像生产者的长期合作方”：创作者负责表达，平台负责让表达被看见、被保存、被持续讨论。以下从内容标准、社区机制与长期运营三个层面，完整拆解 gv片 的品牌方法论。</p>
+
+        <h3>一、内容标准：以真实与品质为底线的原创观</h3>
+        <p>gv片 的内容标准建立在两个关键词上：真实与品质。所谓真实，并不是要求所有作品都是纪录片，而是要求镜头背后的判断是诚实的——不靠剪辑制造廉价冲突，不靠夸张音效补足叙事空洞，不把创作者的个人经验伪装成普遍真理。每一个进入重点推荐位的作品，都要经过内容团队的复核：选题是否有明确的问题意识、素材是否授权清晰、结论是否与画面自洽。gv片 官方在 2026 年进一步细化了这条标准，把“可追溯的素材来源”写入创作者协议，让正版与原创成为硬指标，而不是宣传语。</p>
+        <p>所谓品质，gv片 更关注画面之外的完成度。一部三分钟的短片，如果声音是随手录的、字幕是机器硬转的、调色是套模板的，即使画面再漂亮，也很难通过平台的精品内容评审。我们为此建立了面向创作者的分级指导手册，把高清、专业、可观看性拆解成可操作的技术要点，并在每季度更新一次。品质不是门槛，而是一种公开的、可学习的标准，这让更多新人创作者知道该往哪个方向努力。</p>
+
+        <h3>二、社区机制：创作者与观众的双向成长</h3>
+        <p>在 gv片 的内容生态里，创作者不是流量供应商，观众也不是被投喂的对象。平台设计了三种互相咬合的机制：作品页的深度讨论区、创作者与观众的定期对谈、以及围绕专题企划的共创新玩法。深度讨论区鼓励长评论，优秀的评论会被编辑整理进作品的“延伸阅读”，与视频一起呈现；对谈则以季度为单位，由平台提供场地与技术团队，把线上讨论沉淀为可回看的访谈内容。</p>
+        <p>这套机制带来的直接结果是社区氛围的变化。用户在评价 gv片 时最常提到的词不是“上头”，而是“待得住”。观众愿意花十几分钟看完一支慢节奏的纪录短片，愿意为作品写下四五百字的观后感，也愿意在创作者遇到创作瓶颈时给出具体建议。作为一种陪伴与成长关系，平台与用户之间的信任是靠一次次兑现承诺积累起来的：说好不插播打扰，视频就真的不被打断；说好保护原创，侵权处理流程就真的公开可查。这种看似笨拙的坚持，恰恰是 gv片 在同类平台中形成口碑差异的原因。</p>
+        <p>同时，gv片 也把比赛、挑战与投票等互动形式纳入社区日常。每年两次的主题创作挑战，面向所有注册创作者开放报名，作品由观众投票与专业评审共同评定；投票过程与结果全部公示，让参与感建立在透明之上。这些活动并不追求规模上的爆发，而是希望通过持续的、小步的运营，让创作成为一种可长期坚持的习惯。</p>
+
+        <h3>三、长期运营：把企业责任写进日常流程</h3>
+        <p>持续运营是 gv片 最重要的自我要求。视频平台的难点从来不在一时的爆款，而在五年、十年之后是否还能稳定地为创作者提供支持。为此，gv片 把技术投入作为长期战略：自建高清播放链路、提供面向创作者的素材托管与版本管理、开放可下载的调色包与字幕模板。这些基础设施并不直接产生话题，却决定了创作体验的下限。一个值得信赖的平台，首先要在创作者看不见的地方把事情做对。</p>
+        <p>作为企业，gv片 也承担相应的社会责任。我们与多所高校的影视社团保持合作，为青年创作者提供设备借用与导师计划；在内容侧，平台持续扶持记录普通生活的作品，而不是只把资源投向流量热点。行业领先并不意味着要抢下所有注意力，而是要在垂直领域里把标准做扎实，让后来者有路可循。从品牌故事到企业动态，从精品内容到用户口碑，gv片 希望用可验证的方式说明一件事：一个视频品牌的影响力，最终来自它对待创作者与观众的态度是否始终如一。</p>
+        <p>回望过去几年的运营，gv片 并没有把“多元”和“包容”当成口号挂在首页，而是把它们变成了具体的排播规则与推荐逻辑：给慢内容足够长的曝光周期，给小体量创作者固定的展示位，给争议性选题留出充分的讨论空间。这些选择未必总能带来短期数据的漂亮曲线，却让平台逐渐形成自己的温度。对于希望在视频领域长期深耕的团队来说，这正是 gv片 官方最看重的品牌资产。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="gvx-section gvx-anchor" id="gvx-special">
+    <div class="gvx-shell">
+      <div class="gvx-section-head">
+        <span class="gvx-kicker">Program · 专题企划</span>
+        <h2>gv片专题企划：围绕一个主题持续更新</h2>
+        <p>不是一次性合集，而是有编辑逻辑、有更新节奏的长期内容企划。</p>
+      </div>
+      <div class="gvx-special-grid">
+        <article class="gvx-special-card">
+          <span class="gvx-special-status gvx-live">更新中 · 每周三</span>
+          <h3>真实力量 · 生活纪录片计划</h3>
+          <p>把镜头交给普通人的一天，记录那些不会被新闻写进标题的坚持。第二季已上线四集。</p>
+          <ul class="gvx-special-items">
+            <li>第一集：一座小城的夜班公交司机</li>
+            <li>第二集：在菜市场写了十年的摊主笔记</li>
+            <li>第三集：把旧书修好的年轻人</li>
+          </ul>
+        </article>
+        <article class="gvx-special-card">
+          <span class="gvx-special-status">企划筹备 · 12 月上线</span>
+          <h3>一镜到底 · 长镜头创作挑战</h3>
+          <p>gv片 年度创作挑战，面向所有创作者开放报名，要求以单镜完成一分钟以上叙事。</p>
+          <ul class="gvx-special-items">
+            <li>挑战规则与报名通道说明</li>
+            <li>往届优秀长镜头作品复盘</li>
+            <li>评审团访谈：长镜头的取舍</li>
+          </ul>
+        </article>
+        <article class="gvx-special-card">
+          <span class="gvx-special-status">持续更新 · 双周更</span>
+          <h3>创作者成长课 · 从会拍到会讲</h3>
+          <p>由 gv片 编辑与签约创作者联合出品的教程企划，每期聚焦一个可落地的能力点。</p>
+          <ul class="gvx-special-items">
+            <li>脚本：把想法写成可执行的分镜</li>
+            <li>声音：被低估的叙事第二主角</li>
+            <li>发行：作品上线后的冷启动</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="gvx-section gvx-anchor" id="gvx-authors">
+    <div class="gvx-shell">
+      <div class="gvx-section-head">
+        <span class="gvx-kicker">Creators · 创作者矩阵</span>
+        <h2>gv片创作者：让真实表达被更多人看见</h2>
+        <p>他们来自不同领域，共同点是愿意为一段影像花足够长的时间。</p>
+      </div>
+      <div class="gvx-authors">
+        <article class="gvx-author-card">
+          <div class="gvx-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者岑野的头像：深蓝底色上的山形简笔">
+              <rect width="64" height="64" fill="#22365e"/>
+              <path d="M10 46l14-22 10 14 7-9 13 17z" fill="#ff5a5f"/>
+              <circle cx="44" cy="18" r="6" fill="#ffe6a7"/>
+            </svg>
+          </div>
+          <div>
+            <h3>岑野</h3>
+            <div class="gvx-author-role">纪录片导演 · 擅长创作幕后与深度记录</div>
+            <p>在海岸小镇长大，习惯用长时间蹲守换取一个真实瞬间。入行八年，坚持不摆拍、不干扰拍摄对象。作品多次入选平台年度精品内容，也是 gv片 影像团队的合作导演。</p>
+            <div class="gvx-author-stats"><span>作品 <b>86</b></span><span>粉丝 <b>32.4万</b></span></div>
+            <button class="gvx-video-action" style="margin-top:10px;" data-gvx-author="岑野">查看作者档案</button>
+          </div>
+        </article>
+        <article class="gvx-author-card">
+          <div class="gvx-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者陆知夏的头像：暖橙底色上的剪辑时间轴图形">
+              <rect width="64" height="64" fill="#e5a273"/>
+              <g fill="#5a3b2a"><rect x="12" y="18" width="30" height="7" rx="3"/><rect x="12" y="30" width="40" height="7" rx="3"/><rect x="20" y="42" width="32" height="7" rx="3"/></g>
+              <path d="M38 16v36" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>陆知夏</h3>
+            <div class="gvx-author-role">剪辑指导 · 擅长教程干货与叙事结构</div>
+            <p>前广告公司剪辑师，现全职内容创作者。擅长把复杂的叙事理论拆成可执行步骤，课程风格克制但极其实用。她常说剪辑不是炫技，而是把节奏还给观众，这句话也成了很多新人的入门准则。</p>
+            <div class="gvx-author-stats"><span>作品 <b>124</b></span><span>粉丝 <b>45.1万</b></span></div>
+            <button class="gvx-video-action" style="margin-top:10px;" data-gvx-author="陆知夏">查看作者档案</button>
+          </div>
+        </article>
+        <article class="gvx-author-card">
+          <div class="gvx-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者南屿的头像：浅绿底色上的树影与月牙">
+              <rect width="64" height="64" fill="#9fc2a1"/>
+              <rect x="28" y="30" width="6" height="22" rx="3" fill="#5c7a5e"/>
+              <circle cx="31" cy="24" r="13" fill="#3f6b45"/>
+              <path d="M44 14a8 8 0 100 14 9 9 0 010-14z" fill="#f2f0e2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>南屿</h3>
+            <div class="gvx-author-role">生活影像作者 · 擅长治愈影像与日常记录</div>
+            <p>住在南方海边，拍摄日出、云层和一棵树的变化。她的作品节奏很慢，却总能让评论区安静下来。gv片 编辑评价她“用最小的动作留下了最多的时间感”，她本人则说自己只是在替大家多看几眼世界。</p>
+            <div class="gvx-author-stats"><span>作品 <b>58</b></span><span>粉丝 <b>28.7万</b></span></div>
+            <button class="gvx-video-action" style="margin-top:10px;" data-gvx-author="南屿">查看作者档案</button>
+          </div>
+        </article>
+        <article class="gvx-author-card">
+          <div class="gvx-avatar">
+            <svg viewBox="0 0 64 64" role="img" aria-label="创作者王砚的头像：砖红底色上的老城街巷轮廓">
+              <rect width="64" height="64" fill="#b4573f"/>
+              <g fill="#f0d9c6"><rect x="10" y="26" width="16" height="28"/><rect x="30" y="18" width="14" height="36"/><rect x="48" y="30" width="8" height="24"/></g>
+              <path d="M0 54h64" stroke="#f0d9c6" stroke-width="3"/>
+            </svg>
+          </div>
+          <div>
+            <h3>王砚</h3>
+            <div class="gvx-author-role">城市探索者 · 擅长在地文化与城市探索</div>
+            <p>常年背着相机在老城区里走，最擅长找到那些即将消失的招牌与手艺。他做城市探索选题有个原则：先和摊主聊够半小时再开机。这种近乎固执的拍摄习惯，让他的作品中总有一种被认真对待过的温度。</p>
+            <div class="gvx-author-stats"><span>作品 <b>73</b></span><span>粉丝 <b>19.6万</b></span></div>
+            <button class="gvx-video-action" style="margin-top:10px;" data-gvx-author="王砚">查看作者档案</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 评价 / 企业动态 / 合作 -->
+  <section class="gvx-section gvx-anchor" id="gvx-talk">
+    <div class="gvx-shell">
+      <div class="gvx-section-head">
+        <span class="gvx-kicker">Voice · 用户口碑</span>
+        <h2>gv片社区：用户评价里被反复提到的那些词</h2>
+        <p>没有预设的好评模板，以下是来自不同使用场景的真实反馈节选。</p>
+      </div>
+      <div class="gvx-comments">
+        <div class="gvx-comment">
+          <p>用了两年多，最爱的是作品页那个讨论区。看完一支纪录片还能看到别人写的长评，很多时候比视频本身更打动我。gv片 是真的把评论当内容在做。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#2b4a8b;">林</span><b>林间放映</b><span>· 深度用户</span><span class="gvx-comment-stars">★★★★★</span></div>
+        </div>
+        <div class="gvx-comment">
+          <p>作为新人创作者，最感动的是第一次投稿就收到了编辑的具体修改建议。不是模板化的“继续加油”，而是逐条指出声音和字幕问题。这种反馈在别的平台很难得。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#b4573f;">阿</span><b>阿栗</b><span>· 签约创作者</span><span class="gvx-comment-stars">★★★★★</span></div>
+        </div>
+        <div class="gvx-comment">
+          <p>4K 播放与下载功能上线后体验提升明显，调色包和字幕模板也都能直接用，对独立创作者很友好。希望以后能多一些设备借用的名额。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#3f6b45;">周</span><b>周牧</b><span>· 教育影像作者</span><span class="gvx-comment-stars">★★★★☆</span></div>
+        </div>
+        <div class="gvx-comment">
+          <p>带孩子一起看《真实力量》系列，他会问很多问题。很少有一个视频平台的内容能让家长放心又愿意陪看，这点我很珍惜。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#e5a273;">橙</span><b>橙子妈妈</b><span>· 家庭用户</span><span class="gvx-comment-stars">★★★★★</span></div>
+        </div>
+        <div class="gvx-comment">
+          <p>专题企划的编辑逻辑很清楚，不是把热门视频随便捆一包。每期都有明确的问题意识，这点在现在的视频网站里挺难得的。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#5a3b2a;">许</span><b>许一苇</b><span>· 内容从业者</span><span class="gvx-comment-stars">★★★★☆</span></div>
+        </div>
+        <div class="gvx-comment">
+          <p>参加过一届创作挑战，报名流程和评审公示都做得很规范。虽然没拿奖，但拿到了完整的评审意见，这份意见后来帮我改出了一支更好的片子。</p>
+          <div class="gvx-comment-by"><span class="gvx-comment-dot" style="background:#22365e;">小</span><b>小满</b><span>· 校园创作者</span><span class="gvx-comment-stars">★★★★★</span></div>
+        </div>
+      </div>
+
+      <div class="gvx-triple" style="margin-top:44px;">
+        <div class="gvx-panel">
+          <h2>企业动态 · gv片官方发布</h2>
+          <ul class="gvx-news">
+            <li><time>2026.11.18</time><div><h4>创作者激励计划 2.0 开放报名</h4><p>新增声音工程与字幕规范两项扶持方向，报名截止 12 月 20 日。</p></div></li>
+            <li><time>2026.11.10</time><div><h4>4K 播放与下载功能全量上线</h4><p>高清链路完成升级，创作者可自主选择开放下载权限。</p></div></li>
+            <li><time>2026.10.29</time><div><h4>「真实力量」第二季定档 12 月</h4><p>本季共六集，首支预告已在官方首页放出。</p></div></li>
+            <li><time>2026.10.12</time><div><h4>青年创作者导师计划启动</h4><p>与多所高校影视社团合作，提供设备借用与一对一辅导。</p></div></li>
+          </ul>
+          <h2 style="margin-top:28px;">合作品牌 · 共建内容生态</h2>
+          <div class="gvx-partners">
+            <span class="gvx-partner">光屿影像</span>
+            <span class="gvx-partner">拾帧计划</span>
+            <span class="gvx-partner">海岬纪录片基金</span>
+            <span class="gvx-partner">南岸书店</span>
+            <span class="gvx-partner">微光设备</span>
+          </div>
+        </div>
+        <div class="gvx-panel gvx-anchor" id="gvx-help">
+          <h2>帮助中心 · 常见问题</h2>
+          <div class="gvx-faq">
+            <details>
+              <summary>如何向 gv片 投稿？</summary>
+              <p>点击页面中的“投稿入口”，填写作品标题、简介与素材来源说明即可提交。初审一般在五个工作日内完成，通过后会收到编辑的具体反馈。</p>
+            </details>
+            <details>
+              <summary>平台对画质有硬性要求吗？</summary>
+              <p>建议 1080P 及以上，支持 4K 上传与播放。画质是基础，但我们更看重叙事完整度与素材授权是否清晰。</p>
+            </details>
+            <details>
+              <summary>下载作品需要付费吗？</summary>
+              <p>是否开放下载由创作者自主决定。开放下载的作品可免费获取，用于非商业用途，转载时需保留原作者信息与 gv片 官方标识。</p>
+            </details>
+            <details>
+              <summary>创作挑战如何报名？</summary>
+              <p>在专题企划页的对应专题中进入报名入口，填写创作者信息并提交作品方案，评审结果会在官方首页与专题页同步公示。</p>
+            </details>
+            <details>
+              <summary>遇到侵权内容如何反馈？</summary>
+              <p>可通过作品页的举报按钮提交材料，我们承诺在三个工作日内响应，并对处理流程进行公示，保护原创与正版是平台的底线。</p>
+            </details>
+            <details>
+              <summary>gv片 是否提供创作工具？</summary>
+              <p>官方提供可下载的调色包、字幕模板与分镜表模板，并在创作者成长课中配套讲解使用方法，全部免费。</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="gvx-footer">
+  <div class="gvx-shell">
+    <div class="gvx-footer-grid">
+      <div class="gvx-footer-brand">
+        <h4>gv片 · 官方网站</h4>
+        <p>以高清原创影像连接创作者与观众，持续运营一个值得信赖的视频内容生态，让真实的表达获得长久回响。</p>
+        <span class="gvx-footer-badge"><span class="dot"></span>平台持续运营中 · 官方发布</span>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#gvx-focus">精品内容</a></li>
+          <li><a href="#gvx-special">专题企划</a></li>
+          <li><a href="#gvx-authors">创作者矩阵</a></li>
+          <li><a href="#gvx-talk">用户口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#gvx-parse">品牌解析</a></li>
+          <li><a href="#gvx-help">帮助中心</a></li>
+          <li><a href="#" data-gvx-modal="submit">投稿入口</a></li>
+          <li><a href="#" data-gvx-modal="report">举报反馈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系</h4>
+        <ul>
+          <li>商务合作：brand@gvfilm.example</li>
+          <li>内容投稿：studio@gvfilm.example</li>
+          <li>工作时间：周一至周五 10:00–19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gvx-footer-bottom">
+      <span>© 2026 gv片 版权所有 · 官方网站 · 持续运营中</span>
+      <span>备案号：京ICP备 20261018号-6 · 正版内容保护计划成员</span>
+    </div>
+  </div>
+</footer>
+
+<button class="gvx-top-btn" id="gvxTopBtn" aria-label="回到顶部">↑</button>
+<div class="gvx-toast" id="gvxToast" role="status" aria-live="polite"></div>
+
+<div class="gvx-modal" id="gvxModal">
+  <div class="gvx-modal-box" role="dialog" aria-modal="true" aria-labelledby="gvxModalTitle">
+    <button class="gvx-modal-close" id="gvxModalClose" aria-label="关闭">×</button>
+    <h3 id="gvxModalTitle">标题</h3>
+    <div id="gvxModalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toast = document.getElementById('gvxToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var menuToggle = document.getElementById('gvxMenuToggle');
+  var nav = document.getElementById('gvxNav');
+  menuToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ nav.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); }
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('gvxSearchInput');
+  var searchBtn = document.getElementById('gvxSearchBtn');
+  var searchFeedback = document.getElementById('gvxSearchFeedback');
+  var searchData = [
+    {t:'《在天亮前开机》拍摄手记', k:'海岸 纪录片 创作幕后'},
+    {t:'清晨六点的市场：城市味道', k:'城市探索 王砚 市场'},
+    {t:'剪辑的第一性原理', k:'教程 剪辑 叙事'},
+    {t:'三十天只拍一棵树', k:'治愈 日常记录 南屿'},
+    {t:'器材之外：手机拍品牌短片', k:'测评 手机 创作'},
+    {t:'小空间收纳与光线取舍', k:'家居 实用技巧 收纳'},
+    {t:'真实力量 · 生活纪录片计划', k:'专题 企划 真实'},
+    {t:'创作者成长课', k:'教程 企划 成长'}
+  ];
+  function runSearch(){
+    var q = searchInput.value.trim();
+    searchFeedback.innerHTML = '';
+    if(!q){
+      searchFeedback.classList.remove('show');
+      return;
+    }
+    var hits = searchData.filter(function(item){
+      return item.t.indexOf(q) > -1 || item.k.indexOf(q) > -1;
+    });
+    if(hits.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'gvx-sf-empty';
+      empty.textContent = '没有匹配结果，试试「纪录片」「剪辑」「专题」';
+      searchFeedback.appendChild(empty);
+    }else{
+      hits.slice(0,5).forEach(function(item){
+        var a = document.createElement('a');
+        a.href = '#gvx-focus';
+        a.textContent = item.t;
+        a.addEventListener('click', function(){
+          searchFeedback.classList.remove('show');
+          showToast('已定位到相关内容');
+        });
+        searchFeedback.appendChild(a);
+      });
+    }
+    searchFeedback.classList.add('show');
+  }
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.gvx-search')){ searchFeedback.classList.remove('show'); }
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('gvxTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){ topBtn.classList.add('show'); }
+    else{ topBtn.classList.remove('show'); }
+  }, {passive:true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-gvx-like]');
+    if(likeBtn){
+      toggleLike(likeBtn);
+      return;
+    }
+    var saveBtn = e.target.closest('[data-gvx-save]');
+    if(saveBtn){
+      toggleSave(saveBtn);
+      return;
+    }
+  });
+
+  function parseCount(text){
+    var m = text.match(/([\d.]+)\s*万/);
+    if(m){ return parseFloat(m[1]) * 10000; }
+    var n = parseFloat(text.replace(/[^\d.]/g,''));
+    return isNaN(n) ? 0 : n;
+  }
+  function formatCount(n){
+    if(n >= 10000){
+      var v = n / 10000;
+      return (Math.round(v * 10) / 10) + '万';
+    }
+    return String(Math.round(n));
+  }
+  function toggleLike(btn){
+    var b = btn.querySelector('b');
+    var raw = btn.getAttribute('data-raw');
+    if(raw === null){
+      raw = String(parseCount(b ? b.textContent : '0'));
+      btn.setAttribute('data-raw', raw);
+    }
+    var num = parseFloat(raw);
+    var liked = btn.classList.toggle('gvx-liked');
+    num = liked ? num + 1 : Math.max(0, num - 1);
+    btn.setAttribute('data-raw', String(num));
+    if(b){ b.textContent = formatCount(num); }
+    showToast(liked ? '感谢点赞，已记录你的喜欢' : '已取消点赞');
+  }
+  function toggleSave(btn){
+    var saved = btn.classList.toggle('gvx-saved');
+    btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+    showToast(saved ? '已收藏到「我的片单」' : '已取消收藏');
+  }
+
+  /* 弹窗系统 */
+  var modal = document.getElementById('gvxModal');
+  var modalTitle = document.getElementById('gvxModalTitle');
+  var modalBody = document.getElementById('gvxModalBody');
+
+  var modalContent = {
+    submit: {
+      title: '投稿入口 · gv片官方',
+      html: '<p>请填写作品基本信息，编辑团队会在五个工作日内给出具体反馈。</p>' +
+            '<form class="gvx-modal-form" id="gvxSubmitForm">' +
+            '<input type="text" placeholder="作品标题" required>' +
+            '<input type="text" placeholder="作者昵称" required>' +
+            '<input type="text" placeholder="素材来源与授权说明" required>' +
+            '<textarea rows="3" placeholder="用一句话介绍这支作品"></textarea>' +
+            '<button type="submit" class="gvx-btn gvx-btn-primary" style="justify-content:center;">提交投稿</button>' +
+            '</form>'
+    },
+    share: {
+      title: '分享这支作品',
+      html: '<p>把值得反复观看的影像分享给同样喜欢真实记录的人。</p>' +
+            '<div class="gvx-share-row">' +
+            '<button data-gvx-copy>复制链接</button>' +
+            '<button data-gvx-shareto="微信">微信</button>' +
+            '<button data-gvx-shareto="微博">微博</button>' +
+            '<button data-gvx-shareto="QQ">QQ</button>' +
+            '</div>'
+    },
+    report: {
+      title: '举报 / 反馈',
+      html: '<p>保护原创与正版是 gv片 的底线，我们会在三个工作日内响应。</p>' +
+            '<form class="gvx-modal-form" id="gvxReportForm">' +
+            '<input type="text" placeholder="作品标题或页面位置" required>' +
+            '<textarea rows="3" placeholder="请描述具体问题"></textarea>' +
+            '<button type="submit" class="gvx-btn gvx-btn-primary" style="justify-content:center;">提交反馈</button>' +
+            '</form>'
+    }
+  };
+
+  function openModal(key){
+    if(key && key.indexOf('author:') === 0){
+      var name = key.slice(7);
+      modalTitle.textContent = name + ' · 创作者档案';
+      modalBody.innerHTML = '<p>' + name + ' 是 gv片 长期合作的创作者之一，作品以真实、克制、可反复观看著称。平台为其提供素材托管、技术复核与专题联动支持。</p>' +
+        '<p style="font-size:13px;">可前往创作者矩阵查看完整简介与代表作品，也可在作品页查看其最新更新。</p>' +
+        '<a class="gvx-btn gvx-btn-primary" href="#gvx-authors" data-gvx-close style="justify-content:center;">返回创作者矩阵</a>';
+      modal.classList.add('show');
+      return;
+    }
+    var c = modalContent[key] || modalContent.submit;
+    modalTitle.textContent = c.title;
+    modalBody.innerHTML = c.html;
+    modal.classList.add('show');
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+  }
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-gvx-modal]');
+    if(trigger){
+      e.preventDefault();
+      openModal(trigger.getAttribute('data-gvx-modal'));
+    }
+    var author = e.target.closest('[data-gvx-author]');
+    if(author){
+      openModal('author:' + author.getAttribute('data-gvx-author'));
+    }
+    if(e.target.closest('[data-gvx-close]')){
+      closeModal();
+    }
+    if(e.target === modal){ closeModal(); }
+  });
+  document.getElementById('gvxModalClose').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeModal(); }
+  });
+
+  /* 弹窗内表单、分享、复制 */
+  document.addEventListener('submit', function(e){
+    if(e.target.id === 'gvxSubmitForm'){
+      e.preventDefault();
+      closeModal();
+      showToast('投稿已提交，编辑团队将在五个工作日内联系你');
+    }
+    if(e.target.id === 'gvxReportForm'){
+      e.preventDefault();
+      closeModal();
+      showToast('反馈已收到，我们会尽快核实处理');
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-gvx-copy]')){
+      var text = 'gv片 官方网站 · 精品内容与创作者社区';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){
+          showToast('链接已复制，欢迎分享给朋友');
+        }).catch(function(){
+          showToast('链接已复制，欢迎分享给朋友');
+        });
+      }else{
+        showToast('链接已复制，欢迎分享给朋友');
+      }
+    }
+    var shareTo = e.target.closest('[data-gvx-shareto]');
+    if(shareTo){
+      showToast('已生成' + shareTo.getAttribute('data-gvx-shareto') + '分享卡片');
+    }
+  });
+
+})();
+</script>
+</body>
+      </html>
